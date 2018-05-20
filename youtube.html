@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Youtube API</title>
+      <link rel="stylesheet" href="css/youtube.css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <script src = "js/youtube.js"> </script>
+      <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+      <script src="https://apis.google.com/js/client.js?onload=onClientLoad" type="text/javascript"></script>
+
+    </head>
+
+    <body>
+
+      <header>
+            <h1 class="w100 center"><a href="index.html">Youtube Results</a></h1>
+       </header>
+
+      <section>
+        <div>
+            <input type = "text" id="query"  type="text" onkeypress="handle(event)" class=" w100 "/>
+            <button onclick="search()" class="form-control btn btn-primary w100">Search</button>
+        </div>
+         <div id="results" class = "center"></div>
+      </section>
+
+
+    </body>
+  </html>
