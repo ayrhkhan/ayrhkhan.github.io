@@ -1,5 +1,4 @@
 
-var sum = 0;
 var response;
 var textarea;
 var textarea2;
@@ -21,6 +20,7 @@ function decimal (){
 }
 
  function binary(){
+  var sum = 0;
   response = prompt("Choose a binary number");
   textarea2 = document.getElementById("outputDecimal");
     for(var i = response.length-1; i >= 0 ; i--){
