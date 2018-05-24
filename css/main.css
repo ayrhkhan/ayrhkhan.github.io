@@ -18,7 +18,7 @@ p {
   margin-bottom: 1.8em;
   padding: 15px;
   text-align: center;
-}  
+}
 h2,
 h3,
 a {
@@ -106,10 +106,11 @@ img {
 .footer a:hover {
   color:#FFF0A8;
 }
+
 /*Media Queries*/
 
 @media (min-width: 1025px) {
-	
+
 	.row {
 		width: 90%;
 		max-width: 1150px;
