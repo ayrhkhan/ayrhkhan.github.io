@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/timer.css">
+    <title>Tummy Time Timer - Ammaarah Khan</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="/">home</a>
+                <a href="/narrative-stake/">narrative &amp; stake</a>
+                <a href="/thoughts/">thoughts</a>
+                <a href="/projects/">projects</a>
+                <a href="/arts/">arts</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="timer-section">
+            <h2>Tummy Time Timer</h2>
+            <p>Track and monitor tummy time sessions. Choose easy or hard level and track your progress over time.</p>
+            
+            <div class="timer-container">
+                <div class="timer-display">
+                    <div class="timer-time" id="timerDisplay">00:00:00</div>
+                    <div class="timer-level" id="currentLevel">Select Level</div>
+                </div>
+                
+                <div class="level-selector">
+                    <button class="level-btn" id="easyBtn" data-level="easy">Easy Level</button>
+                    <button class="level-btn" id="hardBtn" data-level="hard">Hard Level</button>
+                </div>
+                
+                <div class="timer-controls">
+                    <button id="startBtn" class="control-btn start-btn">Start</button>
+                    <button id="stopBtn" class="control-btn stop-btn" style="display: none;">Stop</button>
+                    <button id="resetBtn" class="control-btn reset-btn">Reset</button>
+                    <button id="saveBtn" class="control-btn save-btn" style="display: none;">Save Session</button>
+                </div>
+                
+                <div class="session-info" id="sessionInfo" style="display: none;">
+                    <p>Session saved: <span id="sessionTime"></span> at <span id="sessionLevel"></span> level</p>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <h3>Today's Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Easy Level</div>
+                        <div class="stat-value" id="todayEasy">00:00:00</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Hard Level</div>
+                        <div class="stat-value" id="todayHard">00:00:00</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Total Today</div>
+                        <div class="stat-value" id="todayTotal">00:00:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-container">
+                <h3>Monthly Progress</h3>
+                <div class="month-selector">
+                    <select id="monthSelect">
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sep">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
+                </div>
+                <div class="history-table-container">
+                    <table class="history-table" id="historyTable">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Easy Level</th>
+                                <th>Hard Level</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="historyBody">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="month-totals" id="monthTotals"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2025</p>
+    </footer>
+
+    <script src="../js/timer.js"></script>
+</body>
+</html>
+

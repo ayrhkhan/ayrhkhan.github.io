@@ -1,0 +1,299 @@
+.timer-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.timer-section > p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+/* Timer Container */
+.timer-container {
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.timer-display {
+    margin-bottom: 2rem;
+}
+
+.timer-time {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #333;
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 0.5rem;
+}
+
+.timer-level {
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.timer-level.easy-level {
+    color: #4caf50;
+}
+
+.timer-level.hard-level {
+    color: #ff6b6b;
+}
+
+/* Level Selector */
+.level-selector {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.level-btn {
+    padding: 0.75rem 2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    background: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.level-btn:hover {
+    border-color: #FDD0BD;
+    background: #fff5f0;
+}
+
+.level-btn.active {
+    border-color: #FDD0BD;
+    background: #FDD0BD;
+    color: #333;
+}
+
+.level-btn.active[data-level="easy"] {
+    background: #4caf50;
+    border-color: #4caf50;
+    color: white;
+}
+
+.level-btn.active[data-level="hard"] {
+    background: #ff6b6b;
+    border-color: #ff6b6b;
+    color: white;
+}
+
+/* Timer Controls */
+.timer-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.control-btn {
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.start-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.start-btn:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+}
+
+.stop-btn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.stop-btn:hover {
+    background: #ff5252;
+    transform: translateY(-1px);
+}
+
+.reset-btn {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.reset-btn:hover {
+    background: #d0d0d0;
+}
+
+.save-btn {
+    background: #FDD0BD;
+    color: #333;
+}
+
+.save-btn:hover {
+    background: #fcc5a8;
+    transform: translateY(-1px);
+}
+
+.session-info {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #d4edda;
+    color: #155724;
+    border-radius: 4px;
+    border: 1px solid #c3e6cb;
+}
+
+/* Stats Container */
+.stats-container {
+    margin-bottom: 2rem;
+}
+
+.stats-container h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.stat-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    font-variant-numeric: tabular-nums;
+}
+
+/* History Container */
+.history-container {
+    margin-top: 3rem;
+}
+
+.history-container h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.month-selector {
+    margin-bottom: 1.5rem;
+}
+
+.month-selector select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+}
+
+.history-table-container {
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.history-table thead {
+    background: #FDD0BD;
+}
+
+.history-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+.history-table td {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.history-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.month-totals {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.total-display {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timer-time {
+        font-size: 3rem;
+    }
+    
+    .level-selector {
+        flex-direction: column;
+    }
+    
+    .level-btn {
+        width: 100%;
+    }
+    
+    .timer-controls {
+        flex-direction: column;
+    }
+    
+    .control-btn {
+        width: 100%;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .history-table {
+        font-size: 0.9rem;
+    }
+    
+    .history-table th,
+    .history-table td {
+        padding: 0.5rem;
+    }
+}
+
