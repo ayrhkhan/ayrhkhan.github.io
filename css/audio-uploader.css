@@ -1,0 +1,375 @@
+.audio-uploader-section {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.audio-uploader-section > p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+/* Record Container */
+.record-container {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #fafafa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.record-container h3 {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.record-hint {
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.record-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.record-btn,
+.stop-btn,
+.save-btn,
+.discard-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.record-btn {
+    background: #FDD0BD;
+    color: #333;
+}
+
+.record-btn:hover {
+    background: #fcc5a8;
+    transform: translateY(-1px);
+}
+
+.stop-btn {
+    background: #ff6b6b;
+    color: white;
+}
+
+.stop-btn:hover {
+    background: #ff5252;
+    transform: translateY(-1px);
+}
+
+.save-btn {
+    background: #4caf50;
+    color: white;
+}
+
+.save-btn:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+}
+
+.discard-btn {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.discard-btn:hover {
+    background: #d0d0d0;
+}
+
+.recording-status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+.recording-indicator {
+    width: 12px;
+    height: 12px;
+    background: #ff6b6b;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.recorded-audio {
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.recorded-audio h4 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.recorded-audio audio {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.recorded-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Upload Container */
+.upload-container {
+    margin-bottom: 3rem;
+}
+
+.upload-area {
+    position: relative;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    text-align: center;
+    background: #fafafa;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.upload-area:hover {
+    border-color: #FDD0BD;
+    background: #fff;
+}
+
+.upload-area.drag-over {
+    border-color: #FDD0BD;
+    background: #fff5f0;
+}
+
+.upload-area input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.upload-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.upload-text {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.upload-hint {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Upload Progress */
+.upload-progress {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #FDD0BD;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
+
+/* Upload Status */
+.upload-status {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    display: none;
+}
+
+.upload-status.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.upload-status.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.upload-status.info {
+    background: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Audio Gallery */
+.audio-gallery {
+    margin-top: 3rem;
+}
+
+.audio-gallery h3 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.gallery-loading,
+.gallery-empty {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.audio-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.audio-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.audio-card audio {
+    width: 100%;
+    margin-bottom: 1rem;
+    outline: none;
+}
+
+.audio-filename {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    word-break: break-word;
+    font-size: 1.1rem;
+}
+
+.audio-info {
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.audio-upload-date,
+.audio-upload-time {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.audio-upload-date strong,
+.audio-upload-time strong {
+    color: #333;
+    font-weight: 600;
+    min-width: 70px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .record-container {
+        padding: 1.5rem;
+    }
+    
+    .record-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .record-btn,
+    .stop-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .recorded-actions {
+        flex-direction: column;
+    }
+    
+    .save-btn,
+    .discard-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+    
+    .upload-icon {
+        font-size: 2rem;
+    }
+    
+    .upload-text {
+        font-size: 1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .audio-card {
+        padding: 1rem;
+    }
+}
+

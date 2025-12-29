@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/audio-uploader.css">
+    <title>Audio Uploader - Ammaarah Khan</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="/">home</a>
+                <a href="/narrative-stake/">narrative &amp; stake</a>
+                <a href="/thoughts/">thoughts</a>
+                <a href="/projects/">projects</a>
+                <a href="/arts/">arts</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="audio-uploader-section">
+            <h2>Audio Uploader</h2>
+            <p>Record or upload audio files to share with others. All audio files are visible to everyone who visits this page.</p>
+            
+            <div class="record-container">
+                <h3>Record Audio</h3>
+                <p class="record-hint">Maximum recording time: 30 seconds</p>
+                <div class="record-controls">
+                    <button id="recordButton" class="record-btn">
+                        <span class="record-icon">🎤</span>
+                        <span class="record-text">Start Recording</span>
+                    </button>
+                    <button id="stopButton" class="stop-btn" style="display: none;">
+                        <span class="stop-icon">⏹</span>
+                        <span class="stop-text">Stop Recording</span>
+                    </button>
+                    <div class="recording-status" id="recordingStatus" style="display: none;">
+                        <span class="recording-indicator"></span>
+                        <span id="recordingTime">00:00 / 30s</span>
+                    </div>
+                </div>
+                <div class="recorded-audio" id="recordedAudioContainer" style="display: none;">
+                    <h4>Your Recording</h4>
+                    <audio id="recordedAudioPreview" controls></audio>
+                    <div class="recorded-actions">
+                        <button id="saveRecordingBtn" class="save-btn">Save Recording</button>
+                        <button id="discardRecordingBtn" class="discard-btn">Discard</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="upload-container">
+                <div class="upload-area" id="uploadArea">
+                    <input type="file" id="audioFileInput" accept="audio/*" multiple>
+                    <label for="audioFileInput" class="upload-label">
+                        <span class="upload-icon">🎵</span>
+                        <span class="upload-text">Click to upload or drag and drop audio files</span>
+                        <span class="upload-hint">Supports: MP3, WAV, OGG, M4A</span>
+                    </label>
+                </div>
+                <div class="upload-progress" id="uploadProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <p class="progress-text" id="progressText">Uploading...</p>
+                </div>
+                <div class="upload-status" id="uploadStatus"></div>
+            </div>
+
+            <div class="audio-gallery">
+                <h3>Uploaded Audio Files</h3>
+                <div class="gallery-loading" id="galleryLoading">Loading audio files...</div>
+                <div class="gallery-grid" id="audioGallery"></div>
+                <div class="gallery-empty" id="galleryEmpty" style="display: none;">
+                    <p>No audio files uploaded yet. Be the first to upload one!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2025</p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getStorage, ref, uploadBytesResumable, getDownloadURL } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js';
+        import { getFirestore, collection, addDoc, getDocs, query, orderBy } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
+        
+        // Import Firebase config
+        import { firebaseConfig } from '../js/firebase-config.js';
+        
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const storage = getStorage(app);
+        const db = getFirestore(app);
+        
+        // Make Firebase available globally for audio-uploader.js
+        window.firebaseStorage = storage;
+        window.firebaseDb = db;
+        window.firebaseRef = ref;
+        window.firebaseUploadBytesResumable = uploadBytesResumable;
+        window.firebaseGetDownloadURL = getDownloadURL;
+        window.firebaseCollection = collection;
+        window.firebaseAddDoc = addDoc;
+        window.firebaseGetDocs = getDocs;
+        window.firebaseQuery = query;
+        window.firebaseOrderBy = orderBy;
+    </script>
+    <script src="../js/audio-uploader.js"></script>
+</body>
+</html>
+
