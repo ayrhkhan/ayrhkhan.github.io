@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/vocabulary.css">
+    <title>Vocabulary Tracker - Ammaarah Khan</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div>
+                <a href="/">home</a>
+                <a href="/narrative-stake/">narrative &amp; stake</a>
+                <a href="/thoughts/">thoughts</a>
+                <a href="/projects/">projects</a>
+                <a href="/arts/">arts</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <a href="index.html" class="back-button">Back to Projects</a>
+        <section class="vocabulary-section">
+            <h2>Vocabulary Tracker</h2>
+            <p>Type in the text box below. Every word you use is automatically tracked and saved. See all your words and how many times you've used each one.</p>
+            
+            <div class="vocabulary-container">
+                <div class="input-section">
+                    <label for="textInput">Type your text here:</label>
+                    <textarea 
+                        id="textInput" 
+                        placeholder="Start typing... Every word you use will be tracked and saved automatically."
+                        rows="10"
+                    ></textarea>
+                    <div class="input-stats">
+                        <span id="wordCount">0 words</span>
+                        <span id="charCount">0 characters</span>
+                        <button id="clearBtn" class="btn-secondary">Clear Text</button>
+                    </div>
+                </div>
+
+                <div class="vocabulary-section-right">
+                    <div class="vocabulary-header">
+                        <h3>Your Vocabulary</h3>
+                        <div class="vocabulary-controls">
+                            <input type="text" id="searchWords" placeholder="Search words..." class="search-input">
+                            <select id="sortBy" class="sort-select">
+                                <option value="frequency-desc">Most Used</option>
+                                <option value="frequency-asc">Least Used</option>
+                                <option value="alphabetical">Alphabetical</option>
+                                <option value="recent">Recently Added</option>
+                            </select>
+                            <button id="clearVocabularyBtn" class="btn-danger">Clear All</button>
+                        </div>
+                    </div>
+                    
+                    <div class="vocabulary-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Words:</span>
+                            <span class="stat-value" id="totalWords">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Unique Words:</span>
+                            <span class="stat-value" id="uniqueWords">0</span>
+                        </div>
+                    </div>
+                    
+                    <div class="vocabulary-box" id="vocabularyBox">
+                        <p class="empty-message">Start typing to build your vocabulary!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2025</p>
+    </footer>
+
+    <script src="../js/vocabulary.js"></script>
+</body>
+</html>
+
